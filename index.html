@@ -70,6 +70,8 @@ Color:Black;
     <h2> To a school year end party of the century </h2>
     <img src="https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" width="50%" height="50%" class="center">
     <button class="button button1">RSVP</button>
+    
+    <H3> COUNTDOWN TO PARTY:</H3>
     <script src="script.js"></script>
   </body>
   <p id="demo"></p>
@@ -91,7 +93,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
 
-  document.getElementById("demo").innerHTML = "COUNTDOWN TO PARTY: " + days + "d " + hours + "h "
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
   if (distance < 0) {
