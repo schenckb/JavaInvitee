@@ -5,60 +5,116 @@
     <meta name="viewport" content="width=device-width">
     <title>RSVP</title>
   
-  <!-- jQuery -->
-  <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-  <script>
- $(document).ready(function() {
- 
-    $('.faq_question').click(function() {
- 
-        if ($(this).parent().is('.open')){
-            $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
-            $(this).closest('.faq').removeClass('open');
- 
-            }else{
-                var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
-                $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
-                $(this).closest('.faq').addClass('open');
-            }
-    });
-});
-</script>
-  
-<!-- CSS -->
-<style>
-  body {
-  background-color: #d2d687;}
- 
-/*FAQS*/
-.faq_question {
-    margin: 0px;
-    padding: 0px 0px 5px 0px;
-    display: inline-block;
-    cursor: pointer;
-    font-weight: bold;
-}
- 
-.faq_answer_container {
-    height: 0px;
-    overflow: hidden;
-    padding: 0px;
-}
-</style>
-  
-</head>
-  <body>
 
-   <!-- HTML -->
-   <div class="faq_container">
-    <div class="faq">
-       <div class="faq_question">Question goes here</div>
-            <div class="faq_answer_container">
-               <div class="faq_answer">Answer goes here</div>
-            </div>        
-     </div>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+#WHEN {background-color:RED;}
+#WHERE {background-color:green;}
+#WHAT {background-color:blue;}
+#WHY {background-color:orange;}
+#FAQ {background-color:GREY;}
+#FOOD {background-color:PINK;}
+#DRESSCODE {background-color:PURPLE;}
+#PRICE {background-color:BROWN;}
+
+</style>
+</head>
+<body>
+
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div id="FAQ" class="tabcontent">
+  <h1>Frequently Asked Questions</h1>
+  <p>Click on the tabs to view the information for the party.</p>
+</div>
+
+<div id="WHEN" class="tabcontent">
+<p>The party will be held on:</p> 
+  <h1>JUNE 15TH, 2021 @ 12:30pm</h1>
+</div>
+
+<div id="WHERE" class="tabcontent">
+<p>The party is at:</p>
+  <h1>Darien High School Courtyard</h1>
+</div>
+
+<div id="WHAT" class="tabcontent">
+<p>What are we celebrating:</p>
+  <h1>A Celebration for the end of the school year. Celebrating completting anotehr year os school and kicking off Summer 2021.</h1>
+</div>
+
+<div id="WHY" class="tabcontent">
+<p>Why?</p>
+  <h1>WHY NOT? An afternoon filled with food and drinks, entertainment, and it is free!</h1>
+</div>
+
+<div id="FOOD" class="tabcontent">
+<p>Whats the menu?</p>
+  <h1>Food is catered by Chick-Fill-A. <a href="google.com">MENU<a></h1>
+</div>
+
+<div id="DRESSCODE" class="tabcontent">
+<p>Whats the dress code?</p>
+  <h1>Casual wear. Nothing fancy.</h1>
+  </div>
+  
+  <div id="PRICE" class="tabcontent">
+<p>Whats the price of this celebration</p>
+  <h1>100% FREE!</h1>
   </div>
 
- </body>
-</html>
+<button class="tablink" onclick="openCity('FAQ', this, 'GREY')" id="defaultOpen">FAQ</button>
+<button class="tablink" onclick="openCity('WHEN', this, 'RED')">WHEN</button>
+<button class="tablink" onclick="openCity('WHERE', this, 'green')">WHERE</button>
+<button class="tablink" onclick="openCity('WHAT', this, 'blue')">WHAT</button>
+<button class="tablink" onclick="openCity('WHY', this, 'orange')">WHY</button>
+<button class="tablink" onclick="openCity('FOOD', this, 'PINK')">FOOD</button>
+<button class="tablink" onclick="openCity('DRESSCODE', this, 'PURPLE')">DRESS CODE</button>
+<button class="tablink" onclick="openCity('PRICE', this, 'BROWN')">PRICE</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
