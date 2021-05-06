@@ -87,21 +87,20 @@ Font-Size:50px;
 Color:White;
 }
    
-     box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 .column {
   float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px;
+  width: 33.33%;
+  padding: 5px;
 }
 
-
-.row:after {
+.row::after {
   content: "";
-  display: table;
   clear: both;
+  display: table;
 }
    
   <link href="style.css" />
@@ -115,19 +114,14 @@ Color:White;
 
 
     <h2> To the school year end party of the century </h2>
-    
-   
-       
-      
-    <div class="row">
-  <div class="column" style="background-color:#aaa;">
-     <img src="https://greenstabekk.files.wordpress.com/2017/12/disco.jpg" width="200px" height="200px" width="500px" height="500px" align="center">
-  </div>
-  <div class="column" style="background-color:#bbb;">
-   <img src="https://cdn.shopify.com/s/files/1/0225/2669/articles/21st-Birthday-Party-Ideas-Games-You-Can-Play_2048x.jpg?v=1469547845" width="500px" height="500px" align="center" >
-  </div>
-</div>
 
+    <div class="row">
+  <div class="column">
+   <img src="https://greenstabekk.files.wordpress.com/2017/12/disco.jpg" width="200px" height="200px" width="500px" height="500px">
+  </div>
+  <div class="column">
+    <img src="https://cdn.shopify.com/s/files/1/0225/2669/articles/21st-Birthday-Party-Ideas-Games-You-Can-Play_2048x.jpg?v=1469547845" width="500px" height="500px" >
+</div>
             
     <button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/RSVP.html"> 
    <H4>RSVP</H4></a></button>  
