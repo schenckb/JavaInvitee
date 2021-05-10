@@ -50,75 +50,71 @@ body {font-family: "Lato", sans-serif;}
 }
 </style>
 </head>
-<body>
+<h2>FAQ</h2>
+<p>Click on the buttons to view the key information:</p>
 
-<div id="FAQ" class="tabcontent">
-  <h1>Frequently Asked Questions</h1>
-  <p>Click on the tabs to view the information for the party.</p>
-</div>
-
-<div id="WHEN" class="tabcontent">
-<p>The party will be held on:</p> 
-  <h1>JUNE 15TH, 2021 @ 12:30pm</h1>
-</div>
-
-<div id="WHERE" class="tabcontent">
-<p>The party is at:</p>
-  <h1>Darien High School Courtyard</h1>
-</div>
-
-<div id="WHAT" class="tabcontent">
-<p>What are we celebrating:</p>
-  <h1>A Celebration for the end of the school year. Celebrating completting anotehr year os school and kicking off Summer 2021.</h1>
-</div>
-
-<div id="WHY" class="tabcontent">
-<p>Why?</p>
-  <h1>WHY NOT? An afternoon filled with food and drinks, entertainment, and it is free!</h1>
-</div>
-
-<div id="FOOD" class="tabcontent">
-<p>Whats the menu?</p>
-  <h1>Food is catered by Chick-Fill-A. <a href="google.com">MENU<a></h1>
-</div>
-
-<div id="DRESSCODE" class="tabcontent">
-<p>Whats the dress code?</p>
-  <h1>Casual wear. Nothing fancy.</h1>
-  </div>
+<div class="tab">
+  <button class="tablinks" onclick="openFAQ(event, 'When')">When</button>
+  <button class="tablinks" onclick="openFAQ(event, 'Where')">Where</button>
+  <button class="tablinks" onclick="openFAQ(event, 'What')">What</button>
+  <button class="tablinks" onclick="openFAQ(event, 'Why')">Why</button>
+  <button class="tablinks" onclick="openFAQ(event, 'Food')">Food</button>
+  <button class="tablinks" onclick="openFAQ(event, 'Dresscode')">Dress Code</button>
+  <button class="tablinks" onclick="openFAQ(event, 'Price')">Price</button>
   
-  <div id="PRICE" class="tabcontent">
-<p>Whats the price of this celebration</p>
-  <h1>100% FREE!</h1>
-  </div>
+</div>
 
-<button class="tablink" onclick="openCity('FAQ', this, 'GREY')" id="defaultOpen">FAQ</button>
-<button class="tablink" onclick="openCity('WHEN', this, 'RED')">WHEN</button>
-<button class="tablink" onclick="openCity('WHERE', this, 'green')">WHERE</button>
-<button class="tablink" onclick="openCity('WHAT', this, 'blue')">WHAT</button>
-<button class="tablink" onclick="openCity('WHY', this, 'orange')">WHY</button>
-<button class="tablink" onclick="openCity('FOOD', this, 'PINK')">FOOD</button>
-<button class="tablink" onclick="openCity('DRESSCODE', this, 'PURPLE')">DRESS CODE</button>
-<button class="tablink" onclick="openCity('PRICE', this, 'BROWN')">PRICE</button>
+<div id="When" class="tabcontent">
+  <p>The party will be held on:</p> 
+  <h3>JUNE 15TH, 2021 @ 12:30pm</h3>
+</div>
+
+<div id="Where" class="tabcontent">
+  <p>The party is at:</p>
+  <h3>Darien High School Courtyard</h3> 
+</div>
+
+<div id="What" class="tabcontent">
+ <p>What are we celebrating:</p>
+  <h3>A Celebration for the end of the school year. Celebrating completting anotehr year os school and kicking off Summer 2021.</h3>
+</div>
+
+<div id="Why" class="tabcontent">
+  <p>Why?</p>
+  <h3>WHY NOT? An afternoon filled with food and drinks, entertainment, and it is free!</h3>
+</div>
+
+<div id="Food" class="tabcontent">
+  <p>Whats the menu?</p>
+  <h3>Food is catered by Chick-Fill-A. <a href="google.com">MENU<a></h3>
+</div>
+
+<div id="Dresscode" class="tabcontent">
+  <p>Whats the dress code?</p>
+  <h3>Casual wear. Nothing fancy.</h3>
+</div>
+
+<div id="Price" class="tabcontent">
+  <p>Whats the price of this celebration</p>
+  <h3>100% FREE!</h3>
+</div>
+
+
 
 <script>
-  <script src="FAQ.js"></script>
-function openCity(cityName,elmnt,color) {
+function openFAQ(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tablink");
+  tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(cityName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-
+  evt.currentTarget.className += " active";
 }
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
 </script>
    
 </body>
