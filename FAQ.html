@@ -4,133 +4,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RSVP</title>
 <style>
-
-
-body {background-color: #d2d687;
-font-family: Arial;}
-
-
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d2d687;
 }
 
-
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
 }
 
-
-.tab button:hover {
-  background-color: #ddd;
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-
-.tab button.active {
-  background-color: #ccc;
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
 }
 
-
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-  
-  .button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.button1:hover {
-  background-color: #008CBA;
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: dodgerblue;
   color: white;
+  transform: rotateY(180deg);
+}
 </style>
 </head>
 <body>
 
-<h2>FAQ</h2>
-<p>Click on the buttons to view the key information:</p>
+<h1>FAQ</h1>
+<H2>Click on the buttons to view the key information:</H2>
 
-<div class="tab">
-  <button class="tablinks" onclick="openFAQ(event, 'When')">When</button>
-  <button class="tablinks" onclick="openFAQ(event, 'Where')">Where</button>
-  <button class="tablinks" onclick="openFAQ(event, 'What')">What</button>
-  <button class="tablinks" onclick="openFAQ(event, 'Why')">Why</button>
-  <button class="tablinks" onclick="openFAQ(event, 'Food')">Food</button>
-  <button class="tablinks" onclick="openFAQ(event, 'Dresscode')">Dress Code</button>
-  <button class="tablinks" onclick="openFAQ(event, 'Price')">Price</button>
-  
-</div>
-
-<div id="When" class="tabcontent">
-  <p>The party will be held on:</p> 
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>WHEN</h2>
+    </div>
+    <div class="flip-box-back">
+      <p>The party will be held on:</p> 
   <h3>JUNE 15TH, 2021 @ 12:30pm</h3>
+    </div>
+  </div>
 </div>
 
-<div id="Where" class="tabcontent">
-  <p>The party is at:</p>
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>WHERE</h2>
+    </div>
+    <div class="flip-box-back">
+      <p>The party is at:</p>
   <h3>Darien High School Courtyard</h3> 
+    </div>
+  </div>
 </div>
 
-<div id="What" class="tabcontent">
- <p>What are we celebrating:</p>
-  <h3>A Celebration for the end of the school year. Celebrating completting anotehr year os school and kicking off Summer 2021.</h3>
-</div>
-
-<div id="Why" class="tabcontent">
-  <p>Why?</p>
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>WHY</h2>
+    </div>
+    <div class="flip-box-back">
+       <p>Why?</p>
   <h3>WHY NOT? An afternoon filled with food and drinks, entertainment, and it is free!</h3>
+    </div>
+  </div>
 </div>
 
-<div id="Food" class="tabcontent">
-  <p>Whats the menu?</p>
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>FOOD</h2>
+    </div>
+    <div class="flip-box-back">
+       <p>Whats the menu?</p>
   <h3>Food is catered by Chick-Fill-A. <a href="google.com">MENU<a></h3>
+    </div>
+  </div>
 </div>
 
-<div id="Dresscode" class="tabcontent">
-  <p>Whats the dress code?</p>
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>DRESS CODE</h2>
+    </div>
+    <div class="flip-box-back">
+      <p>Whats the dress code?</p>
   <h3>Casual wear. Nothing fancy.</h3>
+    </div>
+  </div>
 </div>
 
-<div id="Price" class="tabcontent">
-  <p>Whats the price of this celebration</p>
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>PRICE</h2>
+    </div>
+    <div class="flip-box-back">
+     <p>Whats the price of this celebration</p>
   <h3>100% FREE!</h3>
+    </div>
+  </div>
 </div>
 
 
-
-<script>
-function openFAQ(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-   
-    
-    <button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/index.html"> 
-   <H4>HOME</H4></a></button>
-    
-    <button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/FAQ.html"> 
-   <H4>FAQ</H4></a></button> 
 </body>
-</html> 
+</html>
