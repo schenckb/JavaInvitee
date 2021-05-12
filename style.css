@@ -1,7 +1,24 @@
-body {
+  body {
   background-color: #d2d687;}
-
-.button {
+   
+   H1 {text-align: center;
+font-family: ARIAL;
+Font-Size:50px;
+Color:White;
+    }
+   
+   H2 {text-align: center;
+font-family: ARIAL;
+Font-Size:23px;
+Color:Black;
+    }
+   
+    H3 {text-align: center;
+font-family: ARIAL;
+Font-Size:45px;
+Color:Black;
+    }
+   .button {
   border: none;
   color: white;
   padding: 16px 32px;
@@ -41,9 +58,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+     filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
    
-   .word  {
+   .container {
   position: relative;
   text-align: center;
   color: white;
@@ -56,4 +75,38 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: ARIAL;
+Font-Size:50px;
+Color:White;
+}
+   
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+   
+   {
+  box-sizing: border-box;
+}
+
+.zoom {
+  transition: transform .2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.03); 
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03); 
 }
