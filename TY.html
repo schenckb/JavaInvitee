@@ -32,6 +32,17 @@ Color:White;
   background-color: #008CBA;
   color: white;
 }
+   
+   .zoom {
+  transition: transform .2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.15); 
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15); 
+}
   <link href="style.css" />
    </style>
   <body>
@@ -47,11 +58,11 @@ Color:White;
 });
         </script>
 
-   <div class="zoom"> <button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/index.html"> 
-     <H4>HOME</H4></a></button></DIV>
+    <button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/index.html"> 
+     <div class="zoom"><H4>HOME</H4></a></button></DIV>
     
-    <div class="zoom"><button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/FAQ.html"> 
-      <H4>FAQ</H4></a></button> </DIV>
+    <button class="button button1"><a href="https://schenckb.github.io/JavaInvitee/FAQ.html"> 
+     <div class="zoom"> <H4>FAQ</H4></a></button> </DIV>
 
   </body>
 </html>
